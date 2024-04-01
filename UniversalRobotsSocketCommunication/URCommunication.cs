@@ -453,8 +453,9 @@ namespace UniversalRobotsSocketCommunication
             if (BitConverter.IsLittleEndian)
                 Array.Reverse(data);
             rz = System.BitConverter.ToDouble(data, 0);
-
-            PoseText.Text = $"p[{x.ToString("0.0000")},{y.ToString("0.0000")},{z.ToString("0.0000")},{rx.ToString("0.0000")},{ry.ToString("0.000")},{rz.ToString("0.0000")}]";
+            
+            //InvariantCulture forces the program to use a dot as a decimal separator, so that even if you execute it i.e. on a German PC, your numbers look like "1.0000" not like "1,0000", because the comma already separates the different strings.
+            PoseText.Text = $"p[{x.ToString("0.0000", CultureInfo.InvariantCulture)},{y.ToString("0.0000", CultureInfo.InvariantCulture)},{z.ToString("0.0000", CultureInfo.InvariantCulture)},{rx.ToString("0.0000", CultureInfo.InvariantCulture)},{ry.ToString("0.000", CultureInfo.InvariantCulture)},{rz.ToString("0.0000", CultureInfo.InvariantCulture)}]";
         }
         private void UpdateLabels()
         {
