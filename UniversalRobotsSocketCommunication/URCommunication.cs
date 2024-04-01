@@ -413,8 +413,7 @@ namespace UniversalRobotsSocketCommunication
             q3 = joints[3];
             q4 = joints[4];
             q5 = joints[5];
-            JointsText.Text = $"[{q0.ToString("0.0000")},{q1.ToString("0.0000")},{q2.ToString("0.0000")},{q3.ToString("0.0000")},{q4.ToString("0.0000")},{q5.ToString("0.0000")}]";
-
+            JointsText.Text = $"[{q0.ToString("0.0000", CultureInfo.InvariantCulture)},{q1.ToString("0.0000", CultureInfo.InvariantCulture)},{q2.ToString("0.0000", CultureInfo.InvariantCulture)},{q3.ToString("0.0000", CultureInfo.InvariantCulture)},{q4.ToString("0.0000", CultureInfo.InvariantCulture)},{q5.ToString("0.0000", CultureInfo.InvariantCulture)}]";
 
 
         }
